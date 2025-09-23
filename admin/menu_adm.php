@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body class="fundofixo">
- <nav class="container navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+<nav class="container navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
 <div class="container-fluid">
+    <img src="../imagens/logochurrascopequeno.png" alt="" width="120">
     <!-- Agrupamento MOBILE -->
     <div class="navbar-header">
         <button 
@@ -23,58 +24,46 @@
             aria-controls="navbarSupportedContent" 
             aria-expanded="false" 
             aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-        
+            <span class="navbar-toggler-icon"></span>
         </button>
-        
-        
-            <img src="../imagens/logochurrascopequeno.png" alt="" width="120">
-        
-
     </div> <!-- fecha navbar-header -->
     <!-- Fecha Agrupamento MOBILE -->
-
     <!-- Barra de navegação -->
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-   <div class="d-flex">
-        <ul class="navbar-nav me-auto">
-            <li>
-                <button type="button" class="btn btn-danger navbar-btn disabled">
-                    Olá, <?php echo($_SESSION['login_usuario']); ?>
-                </button>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">ADMIN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="produtos_lista.php">PRODUTOS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="tipos_lista.php">TIPOS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="usuarios_lista.php">USUÁRIOS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../index.php">
-                    <span class="glyphicon glyphicon-home"></span>
-                </a>
-            </li>
-            
-        </ul>
-
-        <form action="logout.php" method="post" class="navbar-form navbar-right">
-            <button class="d-flex btn btn-secondary">
-                <a class="nav-link" href="logout.php">
-                    <i class="bi bi-house-fill"></i>
-                </a>
-            </button>
-        </form>
-
-    </div> <!-- fecha defaultNavbar -->
-    <!-- Fecha Barra de navegação -->
-</div>
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-danger navbar-btn disabled">
+                        Olá, <?php echo($_SESSION['login_usuario']); ?>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">ADMIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="produtos_lista.php">PRODUTOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tipos_lista.php">TIPOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="usuarios_lista.php">USUÁRIOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.php">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </li>
+                <form action="logout.php" method="post" class="navbar-form navbar-right">
+                    <button class="d-flex btn btn-secondary">
+                        <a class="nav-link" href="logout.php">
+                            <i class="bi bi-house-fill"></i>
+                        </a>
+                    </button>
+                </form>
+            </ul>
+        </div>
+    </div>
 </div>
 </nav>
     
