@@ -58,17 +58,16 @@ $totalRows = $lista->num_rows;
             </div>
     </div>
 
-    <div class="row g-4 mt-4 mb-4">
+    <div class="row mt-4 mb-4">
         <?php do { ?>
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-4">
 
-            <div class="card h-100">
+            <div class="card">
 
             <img 
                 src="imagens/<?php echo htmlspecialchars($row['imagem_produto']); ?>" 
                 alt="<?php echo htmlspecialchars($row['descri_produto']); ?>" 
                 class="card-img-top img-fluid"
-                style="height: 20em; object-fit: cover;"
             >
 
                 <div class="card-body text-end">
@@ -85,7 +84,7 @@ $totalRows = $lista->num_rows;
                     <?php echo mb_strimwidth(htmlspecialchars($row['resumo_produto']), 0, 38, '...'); ?>
                     </p>
 
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between">
 
                         <button class="btn btn-outline-secondary" disabled>
                             R$ <?php echo number_format($row['valor_produto'], 2, ',', '.'); ?>
