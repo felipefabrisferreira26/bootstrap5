@@ -34,25 +34,25 @@ $totalRows = $lista->num_rows;
 </head>
 <body class="fundofixo container">
     <?php include("menu_publico.php"); ?>
-    <div class="d-flex flex-column card">
+    <div class="d-flex flex-column card mt-4 ms-2 me">
         <?php if ($totalRows == 0) : ?>
-            <div class="d-flex align-items-start mb-1">
+            <div class="d-flex align-items-start m-0 alert alert-danger" role="alert">
                 <a href="javascript:window.history.go(-1)" class="btn btn-danger mt-3 me-3">
                     <i class="bi bi-chevron-left"></i>
                 </a>
                 <div>
-                    <h2 class="mb-1">
+                    <h2 class="m-0 p-0 text-danger">
                         Você pesquisou: <i><?php echo htmlspecialchars($filtro_select); ?></i>
                     </h2>
-                    <h6 class="text-muted">Em breve os mais deliciosos produtos ao seu dispor!</h6>
+                    <h6 class="text-danger">Em breve os mais deliciosos produtos ao seu dispor!</h6>
                 </div>
             </div>
         <?php else: ?>
-            <div class="d-flex align-items-center m-1">
+            <div class="d-flex align-items-center m-0 bg alert alert-danger" role="alert">
                 <a href="javascript:window.history.go(-1)" class="btn btn-danger me-3">
                     <i class="bi bi-chevron-left"></i>
                 </a>
-                <h2 class="mb-0">
+                <h2 class="mb-0 text-danger">
                     Você pesquisou: <i><?php echo htmlspecialchars($filtro_select); ?></i>
                 </h2>
             </div>
@@ -111,7 +111,6 @@ $totalRows = $lista->num_rows;
     <footer class="mt-4">
         <?php include("rodape.php"); ?>
     </footer>
-
 </body>
 
 <!-- Bootstrap 5.3 JS Bundle -->
