@@ -27,8 +27,8 @@ $totalRows_tipos    =   ($lista_tipos)->num_rows;
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body class="fundofixo">
-    <nav class="container navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="imagens/logochurrascopequeno.png" alt="Logo Bootstrap" width="120">
             </a>
@@ -91,11 +91,11 @@ $totalRows_tipos    =   ($lista_tipos)->num_rows;
                             size="30"
                             required
                         />
-                            <button type="submit" class="d-flex me-2 btn btn-danger">
+                            <button type="submit" class="me-2 btn btn-danger">
                             <i class="bi bi-search"></i>
                             </button>
                     </form>
-                    <button class="d-flex btn btn-secondary">
+                    <button class="btn btn-secondary">
                         <a href="admin/index.php">  
                             <i class="bi bi-person-fill text-white"></i>
                         </a>
