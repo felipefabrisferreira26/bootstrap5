@@ -42,7 +42,6 @@ if($_POST){
 };
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -50,39 +49,40 @@ if($_POST){
     <meta http-equiv="Refresh" content="15000;URL=../index.php">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <!-- Link arquivos Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Bootstrap 5.3.8 CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/2495680ceb.js" crossorigin="anonymous"></script>
     <!-- Link para CSS específico -->
     <link rel="stylesheet" href="../css/meu_estilo.css">
-    
 </head>
 <body class="fundofixo">
-<main class="container">
-    <section>
-        <article>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <h1 class="breadcrumb text-info text-center">Faça seu login.</h1>
-                    <div class="thumbnail">
-                        <p class="text-info text-center">
+
+<main class="d-flex min-vh-100 align-items-center justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4 d-flex justify-content-center">
+                <div class="card border-info shadow-sm login-card pt-5 pb-5 mb-5">
+                    <div class="card-header text-center border-info text-info">
+                        <h1>Faça seu login.</h1>
+                    </div> <!-- card-header -->
+                    <div class="card-body text-center">
+                        <p class="text-info">
                             <i class="fas fa-users fa-10x"></i>
                         </p>
-                        <br>
-                        <br>
-                        <div class="alert alert-info" role="alert">
-                            <form 
-                                action="login.php"
-                                name="form_login"
-                                id="form_login"
-                                method="post"
-                                enctype="multipart/form-data"
-                            >
-                                <label for="login_usuario">Login:</label>
-                                <p class="input-group">
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-user text-info"></span>
-                                    </span>
+
+                        <form 
+                            action="login.php"
+                            name="form_login"
+                            id="form_login"
+                            method="post"
+                            enctype="multipart/form-data"
+                            class="mt-3"
+                        >
+                            <div class="mb-3 text-start">
+                                <label for="login_usuario" class="form-label">Login:</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     <input 
                                         type="text"
                                         name="login_usuario"
@@ -93,12 +93,13 @@ if($_POST){
                                         required
                                         autocomplete="off"
                                     >
-                                </p>
-                                <label for="senha_usuario">Senha:</label>
-                                <p class="input-group">
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-qrcode text-info"></span>
-                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 text-start">
+                                <label for="senha_usuario" class="form-label">Senha:</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-qrcode text-info"></i></span>
                                     <input 
                                         type="password"
                                         name="senha_usuario"
@@ -107,28 +108,27 @@ if($_POST){
                                         placeholder="Digite sua senha."
                                         required
                                     >
-                                </p>
-                                <p class="text-right">
-                                    <input type="submit" value="Entrar" class="btn btn-primary">
-                                </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-end">
+                                <input type="submit" value="Entrar" class="btn btn-info">
+                            </div>
                         </form>
-                            <p class="text-center">
-                                <small>
-                                    <br>
-                                    Caso não faça uma escolha em 15 segundos será redirecionado automaticamente para página inicial.
-                                </small>
-                            </p>
-                        </div> <!-- Fecha alert -->
-                    </div> <!-- Fecha thumbanil -->
-                </div> <!-- Fecha dimensionamento -->
-            </div> <!-- Fecha row -->
-        </article>
-    </section>
+
+                        <p class="small text-center text-info mt-3">
+                            <small>
+                                Caso não faça uma escolha em 15 segundos será redirecionado automaticamente para página inicial.
+                            </small>
+                        </p>
+                    </div> <!-- card-body -->
+                </div> <!-- card -->
+            </div> <!-- col -->
+        </div> <!-- row -->
+    </div> <!-- container -->
 </main>
 
-    
-<!-- Link arquivos Bootstrap js -->        
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<!-- Bootstrap 5 JS Bundle (Popper incluído) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
