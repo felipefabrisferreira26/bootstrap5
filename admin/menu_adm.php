@@ -13,7 +13,6 @@
 <body class="fundofixo">
  <nav class="container navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
 <div class="container-fluid">
-    <img src="../imagens/logochurrascopequeno.png" alt="" width="120">
     <!-- Agrupamento MOBILE -->
     <div class="navbar-header">
         <button 
@@ -24,9 +23,14 @@
             aria-controls="navbarSupportedContent" 
             aria-expanded="false" 
             aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>   
+                <span class="navbar-toggler-icon"></span>
         
+        </button>
+        
+        
+            <img src="../imagens/logochurrascopequeno.png" alt="" width="120">
+        
+
     </div> <!-- fecha navbar-header -->
     <!-- Fecha Agrupamento MOBILE -->
 
@@ -56,8 +60,6 @@
                     <span class="glyphicon glyphicon-home"></span>
                 </a>
             </li>
-
-            
             
         </ul>
 
