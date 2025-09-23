@@ -41,6 +41,7 @@ $totalRows_tipos    =   ($lista_tipos)->num_rows;
                     aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Barra de navegação -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
