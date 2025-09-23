@@ -16,7 +16,7 @@
 
         <!-- ADM PRODUTOS -->
         <div class="col-sm-6 col-md-4">
-            <div class="thumbnail alert-danger">
+            <div class="card alert-danger">
                 <img src="../imagens/icone_produtos.png" alt="">
                 <br>
                 <div class="alert-danger">
@@ -47,7 +47,7 @@
 
         <!-- ADM TIPOS -->
         <div class="col-sm-6 col-md-4">
-            <div class="thumbnail alert-warning">
+            <div class="card alert-warning">
                 <img src="../imagens/icone_tipos.png" alt="">
                 <br>
                 <div class="alert-warning">
@@ -79,7 +79,7 @@
         <!-- Duplique o código e faça os ajustes para criar a área de Usuários -->
         <!-- ADM USUÁRIOS -->
         <div class="col-sm-6 col-md-4">
-            <div class="thumbnail alert-info">
+            <div class="card alert-info">
                 <img src="../imagens/icone_user.png" alt="">
                 <br>
                 <div class="alert-info">

@@ -8,55 +8,70 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Link para CSS específico -->
     <link rel="stylesheet" href="../css/meu_estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body class="fundofixo">
-<nav class="nav navbar-inverse">
+ <nav class="container navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
 <div class="container-fluid">
+    <img src="../imagens/logochurrascopequeno.png" alt="" width="120">
     <!-- Agrupamento MOBILE -->
     <div class="navbar-header">
         <button 
-            type="button"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#defaultNavbar"
-            aria-expanded="false"
-        >
-            <span class="sr-only">Navegação Mobile</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a href="index.php" class="navbar-brand">
-            <img src="../imagens/logochurrascopequeno.png" alt="">
-        </a>
+            class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>   
+        
     </div> <!-- fecha navbar-header -->
     <!-- Fecha Agrupamento MOBILE -->
 
     <!-- Barra de navegação -->
-    <div class="collapse navbar-collapse" id="defaultNavbar">
-        <ul class="nav navbar-nav navbar-right">
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   <div class="d-flex">
+        <ul class="navbar-nav me-auto">
             <li>
                 <button type="button" class="btn btn-danger navbar-btn disabled">
                     Olá, <?php echo($_SESSION['login_usuario']); ?>
                 </button>
             </li>
-            <li class="active"><a href="index.php">ADMIN</a></li>
-            <li><a href="produtos_lista.php">PRODUTOS</a></li>
-            <li><a href="tipos_lista.php">TIPOS</a></li>
-            <li><a href="usuarios_lista.php">USUÁRIOS</a></li>
-            <li class="active">
-                <a href="../index.php">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">ADMIN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="produtos_lista.php">PRODUTOS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tipos_lista.php">TIPOS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="usuarios_lista.php">USUÁRIOS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php">
                     <span class="glyphicon glyphicon-home"></span>
                 </a>
             </li>
-            <li>
-                <a href="logout.php">
-                    <span class="glyphicon glyphicon-log-out"></span>
-                </a>
-            </li>
+
+            
+            
         </ul>
+
+        <form action="logout.php" method="post" class="navbar-form navbar-right">
+            <button class="d-flex btn btn-secondary">
+                <a class="nav-link" href="logout.php">
+                    <i class="bi bi-house-fill"></i>
+                </a>
+            </button>
+        </form>
+
     </div> <!-- fecha defaultNavbar -->
     <!-- Fecha Barra de navegação -->
+</div>
 
 </div>
 </nav>
