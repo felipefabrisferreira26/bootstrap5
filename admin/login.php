@@ -62,8 +62,8 @@ if($_POST){
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-4 d-flex justify-content-center">
-                <div class="card border-info shadow-sm login-card pt-5 pb-5 mb-5">
-                    <div class="card-header text-center border-info text-info">
+                <div class="card border-info shadow-sm login-card pt-2 pb-5 mb-5">
+                    <div class="card-header text-center border-info text-info p-0 mt-0">
                         <h1>Faça seu login.</h1>
                     </div> <!-- card-header -->
                     <div class="card-body text-center">
