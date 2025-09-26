@@ -63,7 +63,7 @@
         <!-- Botões Home e Logout (só aparecem no desktop, depois do menu) -->
         <div class="d-none d-lg-flex ms-2">
           <a href="index.php" class="btn btn-secondary me-2"><i class="bi bi-house-fill"></i></a>
-          <a href="logout.php" class="btn btn-secondary"><i class="bi bi-door-open-fill"></i></a>
+          <a href="logout.php" class="btn btn-secondary"><i class="bi bi-person-fill-slash"></i></a>
         </div>
 
       </div>
