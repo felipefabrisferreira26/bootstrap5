@@ -99,16 +99,16 @@ $totalRows_fk=  ($lista_fk)->num_rows;
                     enctype="multipart/form-data"
                 >
 
-                <!-- Select id_tipo_produto -->
-                <label for="id_tipo_produto" class="text-danger ">Tipo:</label>
-                
+               <!-- Select id_tipo_produto -->
+                <label for="id_tipo_produto" class="text-danger mb-1">Tipo:</label>
                 <div class="input-group">
-                    <h6  class="btn btn-secondary d-flex  disabled"><i class="bi bi-archive"></i></h6>
-                    <!-- select>option*2 -->
+                    <span class="input-group-text bg-secondary text-white">
+                        <i class="bi bi-archive"></i>
+                    </span>
                     <select 
                         name="id_tipo_produto" 
                         id="id_tipo_produto"
-                        class="form-control"
+                        class="form-select"
                         required
                     >
                         <!-- abre a estrutura de repetição -->
@@ -118,9 +118,8 @@ $totalRows_fk=  ($lista_fk)->num_rows;
                         </option>
                         <?php }while ($row_fk=$lista_fk->fetch_assoc()); ?>
                         <!-- fecha a estrutura de repetição -->
-
                     </select>
-                </div> <!-- fecha input-group -->
+                </div>
                 <!-- Fecha Select id_tipo_produto -->
                 <br>
                 <!-- radio destaque_produto -->
