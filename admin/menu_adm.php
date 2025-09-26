@@ -37,40 +37,44 @@
 
             <div class="d-flex">
 
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav me-5">
 
                     <li class="nav-item">
-                    <button type="button" class="btn btn-danger navbar-btn disabled">
-                        Olá, <?php echo($_SESSION['login_usuario']); ?>
-                    </button>
+                        <button type="button" class="btn btn-danger navbar-btn disabled">
+                            Olá, <?php echo($_SESSION['login_usuario']); ?>
+                        </button>
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="index.php">ADMIN</a>
+                        <a class="nav-link" href="index.php">ADMIN</a>
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="produtos_lista.php">PRODUTOS</a>
+                        <a class="nav-link" href="produtos_lista.php">PRODUTOS</a>
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="tipos_lista.php">TIPOS</a>
+                        <a class="nav-link" href="tipos_lista.php">TIPOS</a>
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="usuarios_lista.php">USUÁRIOS</a>
+                        <a class="nav-link" href="usuarios_lista.php">USUÁRIOS</a>
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="../index.php">
-                        <span class="glyphicon glyphicon-home"></span>
-                    </a>
+                        <a class="nav-link" href="../index.php">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
                     </li>
 
                     <button type="submit" class="me-2 btn btn-secondary">
                         <a href="../index.php"><i class="bi bi-house-fill text-white"></i></a>
                     </button>  
-                     
+
+                     <button type="submit" class="me-2 btn btn-secondary">
+                        <a href="../admin/logout.php"><i class="bi bi-door-open-fill text-white"></i></a>
+                    </button> 
+
                 </ul>
 
             </div>
