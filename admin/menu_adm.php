@@ -53,10 +53,10 @@
             <a class="nav-link" href="../admin/produtos_lista.php">PRODUTOS</a>
           </li>
           <li class="nav-item order-2">
-            <a class="nav-link" href="../admin/">TIPOS</a>
+            <a class="nav-link" href="../admin/tipos_lista.php">TIPOS</a>
           </li>
           <li class="nav-item order-2">
-            <a class="nav-link" href="#">USUÁRIOS</a>
+            <a class="nav-link" href="../admin/usuarios_lista.php">USUÁRIOS</a>
           </li>
         </ul>
 
