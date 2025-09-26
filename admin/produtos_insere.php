@@ -82,17 +82,15 @@ $totalRows_fk=  ($lista_fk)->num_rows;
 
 <main class="container">
 <div class="row"> <!-- Abre row -->
-    <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4"> <!-- dimensionamento -->
-        <h2 class="breadcrumb text-danger">
-            <a href="produtos_lista.php">
-                <button class="btn btn-danger">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </button>
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6 offset-md-4 col-md-4"> <!-- dimensionamento -->
+        <div class="card alert alert-danger text-danger mb-3 mt-3 p-2 d-flex flex-row align-items-center justify-content-between">
+            <a href="produtos_lista.php" class="btn btn-danger" title="Voltar">
+                <i class="bi bi-arrow-90deg-left"></i>
             </a>
-            Inserindo Produtos
-        </h2>
+            <h2 class="flex-grow-1 text-danger text-center">Inserindo Produtos</h2>
+        </div>
         <div class="thumbnail"> <!-- thumbnail -->
-            <div class="alert alert-danger" role="alert"> <!-- alert -->
+            <div class="alert bg-light" role="alert"> <!-- alert -->
                 <form 
                     action="produtos_insere.php"
                     id="form_produto_insere"
@@ -102,11 +100,10 @@ $totalRows_fk=  ($lista_fk)->num_rows;
                 >
 
                 <!-- Select id_tipo_produto -->
-                <label for="id_tipo_produto">Tipo:</label>
+                <label for="id_tipo_produto" class="text-danger ">Tipo:</label>
+                
                 <div class="input-group">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-tasks"></span>
-                    </span>
+                    <h6  class="btn btn-secondary d-flex  disabled"><i class="bi bi-archive"></i></h6>
                     <!-- select>option*2 -->
                     <select 
                         name="id_tipo_produto" 
@@ -138,7 +135,7 @@ $totalRows_fk=  ($lista_fk)->num_rows;
                         >
                         Sim
                     </label>
-                    <label for="destaque_produto_n" class="radio-inline">
+                    <label for="destaque_produto_n" class="radio-inline ms-1">
                         <input 
                             type="radio"
                             name="destaque_produto"
