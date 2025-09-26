@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Link para CSS específico -->
     <link rel="stylesheet" href="../css/meu_estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body class="fundofixo">
 <main class="container">
@@ -45,6 +46,8 @@
         </div> <!-- fecha dimensionamento -->
         <!-- FECHA ADM PRODUTOS -->
 
+
+
         <!-- ADM TIPOS -->
         <div class="col-sm-6 col-md-4">
             <div class="card alert-warning">
@@ -76,6 +79,8 @@
         </div> <!-- fecha dimensionamento -->
         <!-- FECHA ADM TIPOS -->
 
+
+        
         <!-- Duplique o código e faça os ajustes para criar a área de Usuários -->
         <!-- ADM USUÁRIOS -->
         <div class="col-sm-6 col-md-4">
