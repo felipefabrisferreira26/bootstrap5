@@ -1,160 +1,157 @@
 <?php
-// incluindo o Sistema de autenticação
 include("acesso_sup.php");
-
-// Incluir o arquivo e fazer a conexão
 include("../Connections/conn_produtos.php");
 
-if($_POST){
-    // Definindo o USE do banco de dados
-    mysqli_select_db($conn_produtos,$database_conn);
+if ($_POST) {
+    mysqli_select_db($conn_produtos, $database_conn);
 
-    // Variáveis para acrescentar dados ao banco
-    $tabela_insert  =   "tbusuarios";
-    $campos_insert  =   "login_usuario, senha_usuario, nivel_usuario";
+    $login_usuario = $_POST['login_usuario'];
+    $senha_usuario = $_POST['senha_usuario'];
+    $nivel_usuario = $_POST['nivel_usuario'];
 
-    // Receber os dados do formulário
-    // Organize os campos na mesma ordem
-    $login_usuario  =   $_POST['login_usuario'];
-    $senha_usuario  =   $_POST['senha_usuario'];
-    $nivel_usuario  =   $_POST['nivel_usuario'];
-
-    // Reunir os valores a serem inseridos
-    $valores_insert =   "'$login_usuario','$senha_usuario','$nivel_usuario'";
-
-    //Consulta SQL para INSERÇÃO dos dados
-    $insertSQL  =   "
-                    INSERT INTO ".$tabela_insert."
-                        (".$campos_insert.")
-                    VALUES
-                        (".$valores_insert.");
-                    ";
-    $resultado     =   $conn_produtos->query($insertSQL);
-
-    // Após a ação a página sera redirecionada
-    $destino    =   "usuarios_lista.php";
-    if(mysqli_insert_id($conn_produtos)){
-        header("Location: $destino");
-    }else{
-        header("Location: $destino");
-    };
-};   
+    // Simplesmente salva senha em texto (NÃO recomendado em produção)
+    $insertSQL = "
+        INSERT INTO tbusuarios 
+            (login_usuario, senha_usuario, nivel_usuario)
+        VALUES 
+            ('$login_usuario', '$senha_usuario', '$nivel_usuario');
+    ";
+    $conn_produtos->query($insertSQL);
+    header("Location: usuarios_lista.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios - Insere</title>
-    <!-- Link arquivos Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <!-- Link par CSS especifico -->
+    <title>Inserir Usuário</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="../css/meu_estilo.css">
+
+    <style>
+        .toggle-password {
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 0.75rem;
+        }
+    </style>
 </head>
 <body class="fundofixo">
 
-<?php include ("menu_adm.php"); ?>
+<?php include("menu_adm.php"); ?>
 
-<main class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 ">
-            <h2 class="breadcrumb text-info">
-                <a href="usuarios_lista.php">
-                    <button class="btn btn-info">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </button>
-                </a>
-                Inserindo Usuarios
-            </h2>
-            <div class="thumbnail">
-                <div class="alert alert-info">
-                    <form
-                        action="usuarios_insere.php" 
-                        name="form_usuario_insere" 
-                        id="form_usuario_insere" 
-                        method="post" 
-                        enctype="multipart/form-data" 
-                    > 
-                    <!-- input text login_usuario -->
-                    <label for="login_usuario">Login</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-user"></span>
-                        </span>
-                        <input
-                            type="text"
-                            name="login_usuario"
-                            id="login_usuario"
-                            class="form-control"
-                            maxlength=""
-                            placeholder="Digite o seu login."
+<main class="container mt-5">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-info">Inserir Usuário</h2>
+            <a href="usuarios_lista.php" class="btn btn-outline-info">
+                <i class="bi bi-arrow-left"></i> Voltar
+            </a>
+        </div>
+
+        <div class="card shadow">
+            <div class="card-body">
+                <form 
+                    action="usuarios_insere.php" 
+                    method="post" 
+                    id="form_usuario_insere"
+                >
+
+                    <!-- Login -->
+                    <div class="form-floating mb-3">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            name="login_usuario" 
+                            id="login_usuario" 
+                            placeholder="Digite seu login"
+                            maxlength="50"
                             required
                         >
-                    </div> <!-- fecha input-group -->
-                    <!-- fecha input text login_usuario -->
-                    <br>
-                    <label for="senha_usuario">Senha</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-qrcode"></span>
-                        </span>
-                        <input
-                            type="password"
-                            name="senha_usuario"
-                            id="senha_usuario"
-                            class="form-control"
-                            maxlength=""
-                            placeholder="Digite a senha desejada"
+                        <label for="login_usuario">
+                            <i class="bi bi-person-fill"></i> Login
+                        </label>
+                    </div>
+
+                    <!-- Senha com olhinho -->
+                    <div class="form-floating mb-3 position-relative">
+                        <input 
+                            type="password" 
+                            class="form-control" 
+                            name="senha_usuario" 
+                            id="senha_usuario" 
+                            placeholder="Digite sua senha" 
                             required
                         >
-                    </div><!-- Fecha input group -->
-                    <!-- fecha input senha_usuario -->
-                    <br>
-                        <!-- Radio Destaque produto -->
-                    <label for="nivel_usuario">Nivel do Usuario?</label>
-                    <div class="input-group"><!-- Abre 2º input-group -->
-                        <label for="nivel_usuario_c" class="radio-inline">
+                        <label for="senha_usuario">
+                            <i class="bi bi-lock-fill"></i> Senha
+                        </label>
+                        <i class="bi bi-eye-slash-fill toggle-password text-secondary" id="toggleSenha"></i>
+                    </div>
+
+                    <!-- Nível do Usuário -->
+                    <fieldset class="mb-3">
+                        <legend class="fs-6 text-secondary">Nível do Usuário</legend>
+                        <div class="form-check form-check-inline">
                             <input 
+                                class="form-check-input" 
                                 type="radio" 
                                 name="nivel_usuario" 
-                                id="nivel_usuario" 
-                                value="Com"
+                                id="nivel_com" 
+                                value="com"
                             >
-                            Comum
-                        </label>
-                        <label for="nivel_usuario_s" class="radio-inline">
+                            <label class="form-check-label" for="nivel_com">Comum</label>
+                        </div>
+                        <div class="form-check form-check-inline">
                             <input 
-                                type="radio"
+                                class="form-check-input" 
+                                type="radio" 
                                 name="nivel_usuario" 
-                                id="nivel_usuario" 
+                                id="nivel_sup" 
                                 value="sup" 
                                 checked
                             >
-                            Supervisor
-                        </label>
-                    </div><!-- Fechamento do 2º input-group -->
-                    <!-- Fecha radio Destaque produto-->
-                    <br>
-                    <input 
-                    type="submit"
-                    value="Cadastrar"
-                    name="enviar"
-                    id="enviar"
-                    class="btn btn-info btn-block"
-                >
-                </div>
+                            <label class="form-check-label" for="nivel_sup">Supervisor</label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Botão -->
+                    <button type="submit" name="enviar" class="btn btn-info w-100">
+                        <i class="bi bi-person-plus-fill"></i> Cadastrar Usuário
+                    </button>
+                </form>
             </div>
         </div>
-    </div>    
-</main> 
-<!-- JavaScript do Bootstrap --> 
+    </div>
+</main>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<!-- Bootstrap 5 Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="../js/bootstrap.min.js"></script> 
+<!-- Script para mostrar/esconder a senha -->
+<script>
+document.getElementById('toggleSenha').addEventListener('click', function () {
+    const senhaInput = document.getElementById('senha_usuario');
+    const icon = this;
 
-</body> 
+    if (senhaInput.type === 'password') {
+        senhaInput.type = 'text';
+        icon.classList.remove('bi-eye-slash-fill');
+        icon.classList.add('bi-eye-fill');
+    } else {
+        senhaInput.type = 'password';
+        icon.classList.remove('bi-eye-fill');
+        icon.classList.add('bi-eye-slash-fill');
+    }
+});
+</script>
 
-</html> 
-
- 
+</body>
+</html>

@@ -1,276 +1,170 @@
 <?php
-// incluindo o Sistema de autenticação
 include("acesso_com.php");
-// Incluir o arquivo e fazer a conexão
 include("../Connections/conn_produtos.php");
 
-if($_POST){
-    // Definindo o USE do banco de dados
-    mysqli_select_db($conn_produtos,$database_conn);
+if ($_POST) {
+    mysqli_select_db($conn_produtos, $database_conn);
 
-    // Variáveis para acrescentar dados ao banco
-    $tabela_insert  =   "tbprodutos";
-    $campos_insert  =   "id_tipo_produto, destaque_produto, descri_produto, resumo_produto, valor_produto, imagem_produto";
+    if (isset($_POST['enviar'])) {
+        $nome_img = $_FILES['imagem_produto']['name'];
+        $tmp_img = $_FILES['imagem_produto']['tmp_name'];
+        $dir_img = "../imagens/" . $nome_img;
+        move_uploaded_file($tmp_img, $dir_img);
+    }
 
-    // Guardo o nome da imagem no banco e o arquivo no diretório
-    if(isset($_POST['enviar'])){
-        $nome_img   =   $_FILES['imagem_produto']['name'];
-        $tmp_img    =   $_FILES['imagem_produto']['tmp_name'];
-        $dir_img    =   "../imagens/".$nome_img;
-        move_uploaded_file($tmp_img,$dir_img);
-    };
+    $id_tipo_produto = $_POST['id_tipo_produto'];
+    $destaque_produto = $_POST['destaque_produto'];
+    $descri_produto = $_POST['descri_produto'];
+    $resumo_produto = $_POST['resumo_produto'];
+    $valor_produto = $_POST['valor_produto'];
+    $imagem_produto = $nome_img;
 
-    // Receber os dados do formulário
-    // Organize os campos na mesma ordem
-    $id_tipo_produto    =   $_POST['id_tipo_produto'];
-    $destaque_produto   =   $_POST['destaque_produto'];
-    $descri_produto     =   $_POST['descri_produto'];
-    $resumo_produto     =   $_POST['resumo_produto'];
-    $valor_produto      =   $_POST['valor_produto'];
-    $imagem_produto     =   $nome_img; 
-    
-    // Reunir os valores a serem inseridos
-    $valores_insert =   "'$id_tipo_produto','$destaque_produto','$descri_produto','$resumo_produto','$valor_produto','$imagem_produto'";
+    $insertSQL = "
+        INSERT INTO tbprodutos 
+            (id_tipo_produto, destaque_produto, descri_produto, resumo_produto, valor_produto, imagem_produto)
+        VALUES 
+            ('$id_tipo_produto', '$destaque_produto', '$descri_produto', '$resumo_produto', '$valor_produto', '$imagem_produto');
+    ";
+    $resultado = $conn_produtos->query($insertSQL);
+    header("Location: produtos_lista.php");
+}
 
-    // Consulta SQL para INSERÇÃO dos dados
-    $insertSQL      =   "
-                        INSERT INTO ".$tabela_insert."
-                            (".$campos_insert.")
-                        VALUES
-                            (".$valores_insert.");
-                        ";
-    $resultado      =   $conn_produtos->query($insertSQL);
-
-    // Após a ação a página sera redirecionada
-    $destino    =   "produtos_lista.php";
-    if(mysqli_insert_id($conn_produtos)){
-        header("Location: $destino");
-    }else{
-        header("Location: $destino");
-    };
-};
-
-// Selecionar o banco de dados (USE)
-mysqli_select_db($conn_produtos,$database_conn);
-
-// Selecionar os dados da chave estrangeira
-$tabela_fk      =   "tbtipos";
-$ordenar_por    =   "rotulo_tipo ASC";
-$consulta_fk    =   "
-                    SELECT  *
-                    FROM    ".$tabela_fk."
-                    ORDER BY ".$ordenar_por.";
-                ";
-$lista_fk   =   $conn_produtos->query($consulta_fk);
-$row_fk     =   $lista_fk->fetch_assoc();
-$totalRows_fk=  ($lista_fk)->num_rows;
+mysqli_select_db($conn_produtos, $database_conn);
+$consulta_fk = "SELECT * FROM tbtipos ORDER BY rotulo_tipo ASC;";
+$lista_fk = $conn_produtos->query($consulta_fk);
+$row_fk = $lista_fk->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - Insere</title>
-    <!-- Link arquivos Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <!-- Link para CSS específico -->
+    <title>Inserir Produto</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="../css/meu_estilo.css">
+    <style>
+        #imagem {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
 </head>
 <body class="fundofixo">
 
 <?php include("menu_adm.php"); ?>
 
-<main class="container">
-<div class="row"> <!-- Abre row -->
-    <div class="col-xs-12 col-sm-offset-3 col-sm-6 offset-md-4 col-md-4"> <!-- dimensionamento -->
-        <div class="card alert alert-danger text-danger mb-3 mt-3 p-2 d-flex flex-row align-items-center justify-content-between">
-            <a href="produtos_lista.php" class="btn btn-danger" title="Voltar">
-                <i class="bi bi-arrow-90deg-left"></i>
+<main class="container mt-5">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-danger">Inserir Produto</h2>
+            <a href="produtos_lista.php" class="btn btn-outline-danger">
+                <i class="bi bi-arrow-left"></i> Voltar
             </a>
-            <h2 class="flex-grow-1 text-danger text-center">Inserindo Produtos</h2>
         </div>
-        <div class="thumbnail"> <!-- thumbnail -->
-            <div class="alert bg-light" role="alert"> <!-- alert -->
-                <form 
-                    action="produtos_insere.php"
-                    id="form_produto_insere"
-                    name="form_produto_insere"
-                    method="post"
-                    enctype="multipart/form-data"
-                >
 
-                <!-- Select id_tipo_produto -->
-                <label for="id_tipo_produto" class="text-danger ">Tipo:</label>
-                
-                <div class="input-group">
-                    <h6  class="btn btn-secondary d-flex  disabled"><i class="bi bi-archive"></i></h6>
-                    <!-- select>option*2 -->
-                    <select 
-                        name="id_tipo_produto" 
-                        id="id_tipo_produto"
-                        class="form-control"
-                        required
-                    >
-                        <!-- abre a estrutura de repetição -->
-                        <?php do{ ?>
-                        <option value="<?php echo $row_fk['id_tipo']; ?>">
-                            <?php echo $row_fk['rotulo_tipo']; ?>
-                        </option>
-                        <?php }while ($row_fk=$lista_fk->fetch_assoc()); ?>
-                        <!-- fecha a estrutura de repetição -->
+        <div class="card shadow">
+            <div class="card-body">
+                <form action="produtos_insere.php" method="post" enctype="multipart/form-data" id="form_produto_insere">
 
-                    </select>
-                </div> <!-- fecha input-group -->
-                <!-- Fecha Select id_tipo_produto -->
-                <br>
-                <!-- radio destaque_produto -->
-                <label for="destaque_produto">Destaque?</label>
-                <div class="input-group">
-                    <label for="destaque_produto_s" class="radio-inline">
-                        <input 
-                            type="radio"
-                            name="destaque_produto"
-                            id="destaque_produto"
-                            value="Sim"
-                        >
-                        Sim
-                    </label>
-                    <label for="destaque_produto_n" class="radio-inline ms-1">
-                        <input 
-                            type="radio"
-                            name="destaque_produto"
-                            id="destaque_produto"
-                            value="Não"
-                            checked
-                        >
-                        Não
-                    </label>
-                </div> <!-- fecha input-group -->
-                <!-- Fecha radio destaque_produto -->
-                <br>
-                <!-- text descri_produto -->
-                <label for="descri_produto">Descrição:</label>
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-cutlery"></span>
-                    </span>
-                    <input 
-                        type="text"
-                        name="descri_produto"
-                        id="descri_produto"
-                        class="form-control"
-                        placeholder="Digite o título do produto."
-                        maxlength="100"
-                        required
-                    >
-                </div> <!-- fecha input-group -->
-                <!-- Fecha text descri_produto -->
-                <br>
-                <!-- textarea resumo_produto -->
-                <label for="resumo_produto">Resumo:</label>
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-list-alt"></span>
-                    </span>
-                    <textarea 
-                        name="resumo_produto" 
-                        id="resumo_produto"
-                        cols="30"
-                        rows="8"
-                        placeholder="Digite os detalhes do produto."
-                        class="form-control"
-                    ></textarea>
-                </div> <!-- fecha input-group -->
-                <!-- Fecha textarea resumo_produto -->
-                <br>
-                <!-- number valor_produto -->
-                <label for="valor_produto">Valor:</label>
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-tags"></span>
-                    </span>
-                    <input 
-                        type="number" 
-                        name="valor_produto" 
-                        id="valor_produto"
-                        class="form-control"
-                        min="0"
-                        step="0.01"
-                    >
-                </div> <!-- fecha input-group -->
-                <!-- fecha number valor_produto -->
-                <br>
-                <!-- file imagem_produto -->
-                <label for="imagem_produto">Imagem:</label>
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-picture"></span>
-                    </span>
-                    <!-- para exibir a imagem inserida vamos colocar um img -->
-                    <img 
-                        src="" 
-                        alt=""
-                        name="imagem"
-                        id="imagem"
-                        class="img-responsive"
-                    >
-                    <input 
-                        type="file"
-                        name="imagem_produto"
-                        id="imagem_produto"
-                        class="form-control"
-                        accept="image/*"
-                    >
-                </div> <!-- fecha input-group -->
-                <!-- fecha file imagem_produto -->
-                <br>
-                <!-- btn enviar -->
-                <input 
-                    type="submit" 
-                    value="Cadastrar"
-                    name="enviar"
-                    id="enviar"
-                    class="btn btn-danger btn-block"
-                >              
+                    <!-- Tipo -->
+                    <div class="mb-3">
+                        <label for="id_tipo_produto" class="form-label">Tipo do Produto</label>
+                        <select class="form-select" name="id_tipo_produto" id="id_tipo_produto" required>
+                            <?php do { ?>
+                                <option value="<?= $row_fk['id_tipo']; ?>">
+                                    <?= $row_fk['rotulo_tipo']; ?>
+                                </option>
+                            <?php } while ($row_fk = $lista_fk->fetch_assoc()); ?>
+                        </select>
+                    </div>
+
+                    <!-- Destaque -->
+                    <label class="form-label">Destaque?</label>
+                    <div class="mb-3 d-flex gap-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="destaque_produto" id="destaque_sim" value="Sim">
+                            <label class="form-check-label" for="destaque_sim">Sim</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="destaque_produto" id="destaque_nao" value="Não" checked>
+                            <label class="form-check-label" for="destaque_nao">Não</label>
+                        </div>
+                    </div>
+
+                    <!-- Descrição -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="descri_produto" name="descri_produto" maxlength="100" placeholder="Descrição do produto" required>
+                        <label for="descri_produto"><i class="bi bi-info-circle"></i> Descrição</label>
+                    </div>
+
+                    <!-- Resumo -->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" name="resumo_produto" id="resumo_produto" style="height: 150px" placeholder="Resumo do produto"></textarea>
+                        <label for="resumo_produto"><i class="bi bi-textarea-resize"></i> Resumo</label>
+                    </div>
+
+                    <!-- Valor -->
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" name="valor_produto" id="valor_produto" min="0" step="0.01" placeholder="Valor do produto" required>
+                        <label for="valor_produto"><i class="bi bi-currency-dollar"></i> Valor</label>
+                    </div>
+
+                    <!-- Imagem -->
+                    <div class="mb-3">
+                        <label for="imagem_produto" class="form-label">Imagem do Produto</label>
+                        <input type="file" class="form-control" name="imagem_produto" id="imagem_produto" accept="image/*" required>
+                        <img id="imagem" alt="Preview da imagem">
+                    </div>
+
+                    <!-- Botão -->
+                    <button type="submit" name="enviar" id="enviar" class="btn btn-danger w-100">
+                        <i class="bi bi-check-circle"></i> Cadastrar Produto
+                    </button>
                 </form>
-            </div> <!-- Fecha alert -->
-        </div> <!-- Fecha thumbnail -->
-    </div> <!-- fecha dimensionamento -->
-</div> <!-- Fecha row -->
+            </div>
+        </div>
+    </div>
 </main>
 
-<!-- Script para a imagem -->   
-<script>
-document.getElementById("imagem_produto").onchange = function(){
-    var reader = new FileReader();
-    if(this.files[0].size>1025000){
-        alert("A imagem deve ter no máximo 1mb");
-        $("#imagem").attr("src","blank");
-        $("#imagem").hide();
-        $("#imagem_produto").wrap('<form>').closest('form').get(0).reset();
-        $("#imagem_produto").unwrap();          
-        return false;
-    }
-    if(this.files[0].type.indexOf("image")==-1){
-        alert("Formato inválido, escolha uma imagem!");
-        $("#imagem").attr("src","blank");
-        $("#imagem").hide();
-        $("#imagem_produto").wrap('<form>').closest('form').get(0).reset();
-        $("#imagem_produto").unwrap();          
-        return false;
-    }
-    reader.onload = function(e){
-        // obter dados carregados e renderizar uma miniatura
-        document.getElementById("imagem").src = e.target.result;
-        $("#imagem").show();
-    };
-    reader.readAsDataURL(this.files[0]);
-};
+<!-- Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Script de preview da imagem -->
+<script>
+document.getElementById("imagem_produto").addEventListener("change", function () {
+    const file = this.files[0];
+    const imagem = document.getElementById("imagem");
+
+    if (file) {
+        if (file.size > 1024 * 1024) {
+            alert("A imagem deve ter no máximo 1MB.");
+            this.value = "";
+            imagem.style.display = "none";
+            return;
+        }
+
+        if (!file.type.startsWith("image/")) {
+            alert("Formato inválido. Selecione uma imagem.");
+            this.value = "";
+            imagem.style.display = "none";
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imagem.src = e.target.result;
+            imagem.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+    }
+});
 </script>
 
-<!-- Link arquivos Bootstrap js -->        
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
