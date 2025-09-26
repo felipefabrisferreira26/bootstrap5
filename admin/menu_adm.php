@@ -37,7 +37,7 @@
 
             <div class="d-flex">
 
-                <ul class="navbar-nav me-5">
+                <ul class="navbar-nav">
 
                     <li class="nav-item">
                         <button type="button" class="btn btn-danger navbar-btn disabled">
