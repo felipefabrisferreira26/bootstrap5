@@ -17,12 +17,12 @@
         <!-- ADM PRODUTOS -->
         <div class="col-sm-6 col-md-4">
             <div class="card alert-danger">
-                <img src="../imagens/icone_produtos.png" alt="" class="img-thumbnail">
+                <img src="../imagens/icone_produtos.png" alt="Ícone Produtos" class="img img-fluid mx-auto d-block mt-3" style="width: 128px; height: 128px;">
                 <br>
                 <div class="alert-danger">
                     <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
                         <div class="btn-group ps-2">
-                            <button class="btn btn-default disabled" style="cursor: default;">
+                            <button class="btn btn-default disabled mb-2" style="cursor: default;">
                                 PRODUTOS
                             </button>
                         </div> <!-- fecha btn-group -->
@@ -31,12 +31,12 @@
                     <div class="btn-group btn-group-justified" role="group"><!-- GRUPO DE BOTÕES -->
                         <div class="btn-group ps-3"> <!-- botão Listar -->
                             <a href="produtos_lista.php">
-                                <button class="btn btn-danger">Listar</button>
+                                <button class="btn btn-danger mb-2">Listar</button>
                             </a>
                         </div> <!-- fecha btn-group botão Listar-->
                         <div class="btn-group ps-2"> <!-- botão Inserir -->
                             <a href="produtos_insere.php">
-                                <button class="btn btn-danger">Inserir</button>
+                                <button class="btn btn-danger mb-2">Inserir</button>
                             </a>
                         </div> <!-- fecha btn-group botão Inserir-->
                     </div> <!-- fecha btn-group GRUPO DE BOTÕES -->
@@ -48,12 +48,12 @@
         <!-- ADM TIPOS -->
         <div class="col-sm-6 col-md-4">
             <div class="card alert-warning">
-                <img src="../imagens/icone_tipos.png" alt="" class="img-thumbnail">
+                <img src="../imagens/icone_tipos.png" alt="" class="img img-fluid mx-auto d-block mt-3" style="width: 128px; height: 128px;">
                 <br>
                 <div class="alert-warning">
                     <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
                         <div class="btn-group ps-2">
-                            <button class="btn btn-default disabled" style="cursor: default;">
+                            <button class="btn btn-default disabled mb-2" style="cursor: default;">
                                 TIPOS
                             </button>
                         </div> <!-- fecha btn-group -->
@@ -62,12 +62,12 @@
                     <div class="btn-group btn-group-justified" role="group"><!-- GRUPO DE BOTÕES -->
                         <div class="btn-group ps-3"> <!-- botão Listar -->
                             <a href="tipos_lista.php">
-                                <button class="btn btn-warning">Listar</button>
+                                <button class="btn btn-warning mb-2">Listar</button>
                             </a>
                         </div> <!-- fecha btn-group botão Listar-->
                         <div class="btn-group ps-2"> <!-- botão Inserir -->
                             <a href="tipos_insere.php">
-                                <button class="btn btn-warning">Inserir</button>
+                                <button class="btn btn-warning mb-2">Inserir</button>
                             </a>
                         </div> <!-- fecha btn-group botão Inserir-->
                     </div> <!-- fecha btn-group GRUPO DE BOTÕES -->
@@ -80,12 +80,12 @@
         <!-- ADM USUÁRIOS -->
         <div class="col-sm-6 col-md-4">
             <div class="card alert-info">
-                <img src="../imagens/icone_user.png" alt="" class="img-thumbnail rounded">
+                <img src="../imagens/icone_user.png" alt="" class="img img-fluid mx-auto d-block mt-3" style="width: 128px; height: 128px;">
                 <br>
                 <div class="alert-info">
                     <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
                         <div class="btn-group ps-2">
-                            <button class="btn btn-default disabled" style="cursor: default;">
+                            <button class="btn btn-default disabled mb-2" style="cursor: default;">
                                 USUÁRIOS
                             </button>
                         </div> <!-- fecha btn-group -->
@@ -94,12 +94,12 @@
                     <div class="btn-group btn-group-justified" role="group"><!-- GRUPO DE BOTÕES -->
                         <div class="btn-group ps-3"> <!-- botão Listar -->
                             <a href="usuarios_lista.php">
-                                <button class="btn btn-info">Listar</button>
+                                <button class="btn btn-info mb-2">Listar</button>
                             </a>
                         </div> <!-- fecha btn-group botão Listar-->
                         <div class="btn-group ps-2"> <!-- botão Inserir -->
                             <a href="usuarios_insere.php">
-                                <button class="btn btn-info">Inserir</button>
+                                <button class="btn btn-info mb-2">Inserir</button>
                             </a>
                         </div> <!-- fecha btn-group botão Inserir-->
                     </div> <!-- fecha btn-group GRUPO DE BOTÕES -->

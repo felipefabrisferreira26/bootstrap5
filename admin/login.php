@@ -127,8 +127,7 @@ if($_POST){
         </div> <!-- row -->
     </div> <!-- container -->
 </main>
-
-<!-- Bootstrap 5 JS Bundle (Popper incluído) -->
+<!-- Bootstrap 5.3.8 JS (CDN) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
