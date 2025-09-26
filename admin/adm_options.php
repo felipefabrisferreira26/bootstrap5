@@ -23,7 +23,7 @@
                 <div class="alert-danger">
                     <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
                         <div class="btn-group ps-2">
-                            <button class="btn btn-danger " style="cursor: default;">
+                            <button class="btn btn-default disabled mb-2" style="cursor: default;">
                                 PRODUTOS
                             </button>
                         </div> <!-- fecha btn-group -->
