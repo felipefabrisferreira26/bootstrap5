@@ -11,7 +11,7 @@
 </head>
 <body class="fundofixo">
 <main class="container">
-    <h1 class="breadcrumb">Área Administrativa</h1>
+    <h1 class="card text-bg-danger ps-2">Área Administrativa</h1>
     <div class="row"> <!-- manter os elementos na linha -->
 
         <!-- ADM PRODUTOS -->
