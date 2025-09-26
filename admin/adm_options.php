@@ -18,7 +18,7 @@
         <!-- ADM PRODUTOS -->
         <div class="col-sm-6 col-md-4">
             <div class="card alert-danger">
-                <img src="../imagens/icone_produtos.png" alt="Ícone Produtos" class="img img-fluid mx-auto d-block mt-3" style="width: 128px; height: 128px;">
+                <img src="../imagens/icone_produtos.png" alt="Ícone Produtos" class="img img-fluid mx-auto d-block mt-3 h-100 w-51">
                 <br>
                 <div class="alert-danger">
                     <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
@@ -51,7 +51,7 @@
         <!-- ADM TIPOS -->
         <div class="col-sm-6 col-md-4">
             <div class="card alert-warning">
-                <img src="../imagens/icone_tipos.png" alt="" class="img img-fluid mx-auto d-block mt-3" style="width: 128px; height: 128px;">
+                <img src="../imagens/icone_tipos.png" alt="" class="img img-fluid mx-auto d-block mt-3">
                 <br>
                 <div class="alert-warning">
                     <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
@@ -85,7 +85,7 @@
         <!-- ADM USUÁRIOS -->
         <div class="col-sm-6 col-md-4">
             <div class="card alert-info">
-                <img src="../imagens/icone_user.png" alt="" class="img img-fluid mx-auto d-block mt-3" style="width: 128px; height: 128px;">
+                <img src="../imagens/icone_user.png" alt="" class="img img-fluid mx-auto d-block mt-3">
                 <br>
                 <div class="alert-info">
                     <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
