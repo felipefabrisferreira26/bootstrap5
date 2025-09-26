@@ -69,6 +69,13 @@
 
                     <button type="submit" class="me-2 btn btn-secondary">
                         <a href="../index.php"><i class="bi bi-house-fill text-white"></i></a>
+<<<<<<< HEAD
+                    </button>
+                     <button type="submit" class="me-2 btn btn-secondary">
+                        <a href="logout.php"><i class="bi bi-person-fill-slash text-white"></i></a>
+                    </button>
+            </ul>
+=======
                     </button>  
 
                      <button type="submit" class="me-2 btn btn-secondary">
@@ -79,6 +86,7 @@
 
             </div>
 
+>>>>>>> 2e099a1ea1d6e64e1661ee09d7933d355b112b8e
         </div>
 
     </div>
