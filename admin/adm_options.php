@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Link para CSS específico -->
     <link rel="stylesheet" href="../css/meu_estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body class="fundofixo">
 <main class="container">
@@ -22,7 +23,7 @@
                 <div class="alert-danger">
                     <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
                         <div class="btn-group ps-2">
-                            <button class="btn btn-default disabled" style="cursor: default;">
+                            <button class="btn btn-danger " style="cursor: default;">
                                 PRODUTOS
                             </button>
                         </div> <!-- fecha btn-group -->
@@ -44,6 +45,8 @@
             </div> <!-- fecha thumbnail -->
         </div> <!-- fecha dimensionamento -->
         <!-- FECHA ADM PRODUTOS -->
+
+
 
         <!-- ADM TIPOS -->
         <div class="col-sm-6 col-md-4">
@@ -76,6 +79,8 @@
         </div> <!-- fecha dimensionamento -->
         <!-- FECHA ADM TIPOS -->
 
+
+        
         <!-- Duplique o código e faça os ajustes para criar a área de Usuários -->
         <!-- ADM USUÁRIOS -->
         <div class="col-sm-6 col-md-4">
