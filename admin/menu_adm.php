@@ -12,9 +12,10 @@
 </head>
 <body class="fundofixo">
 <nav class="container navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-<div class="container-fluid">
-    <img src="../imagens/logochurrascopequeno.png" alt="" width="120">
-    <!-- Agrupamento MOBILE -->
+<div class="container">
+<img src="../imagens/logochurrascopequeno.png" alt="" width="120">
+<!-- Agrupamento MOBILE -->
+    <!-- Abre navbar-header -->
     <div class="navbar-header">
         <button 
             class="navbar-toggler" 
@@ -26,10 +27,11 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    </div> <!-- fecha navbar-header -->
-    <!-- Fecha Agrupamento MOBILE -->
-    <!-- Barra de navegação -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    </div>
+     <!-- fecha navbar-header -->
+<!-- Fecha Agrupamento MOBILE -->
+
+<!-- Barra de navegação -->
         <div class="d-flex">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
@@ -54,19 +56,14 @@
                         <span class="glyphicon glyphicon-home"></span>
                     </a>
                 </li>
-                <form action="logout.php" method="post" class="navbar-form navbar-right">
-                    <button class="d-flex btn btn-secondary">
-                        <a class="nav-link" href="logout.php">
-                            <i class="bi bi-house-fill"></i>
-                        </a>
+                    <button type="submit" class="me-2 btn btn-secondary" onclick="javascript:location.href='../menu_publico.php'">
+                        <i class="bi bi-house-fill"></i>
                     </button>
-                </form>
             </ul>
         </div>
-    </div>
+<!-- Fecha barra de navegação -->
 </div>
-</nav>
-    
+</nav>   
 <!-- Link arquivos Bootstrap js         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>-->
