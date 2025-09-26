@@ -56,8 +56,8 @@
                         <span class="glyphicon glyphicon-home"></span>
                     </a>
                 </li>
-                    <button type="submit" class="me-2 btn btn-secondary" onclick="javascript:location.href='../menu_publico.php'">
-                        <i class="bi bi-house-fill"></i>
+                    <button type="submit" class="me-2 btn btn-secondary">
+                        <a href="../index.php"><i class="bi bi-house-fill text-white"></i></a>
                     </button>
             </ul>
         </div>
