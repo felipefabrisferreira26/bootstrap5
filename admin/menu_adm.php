@@ -59,6 +59,9 @@
                     <button type="submit" class="me-2 btn btn-secondary">
                         <a href="../index.php"><i class="bi bi-house-fill text-white"></i></a>
                     </button>
+                     <button type="submit" class="me-2 btn btn-secondary">
+                        <a href="logout.php"><i class="bi bi-person-fill-slash text-white"></i></a>
+                    </button>
             </ul>
         </div>
 <!-- Fecha barra de navegação -->
