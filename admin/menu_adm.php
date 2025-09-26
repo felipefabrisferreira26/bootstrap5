@@ -14,75 +14,34 @@
 
 <body class="fundofixo">
 
-<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-
-    <div class="container">
-
-        <img src="../imagens/logochurrascopequeno.png" alt="" width="120">
-    
-            <button class="navbar-toggler" 
-                    type="button" 
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#navbarSupportedContent" 
-                    aria-controls="navbarSupportedContent" 
-                    aria-expanded="false" 
-                    aria-label="Toggle navigation"
-            >
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <div class="d-flex">
-
-                <ul class="navbar-nav">
-
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-danger navbar-btn disabled">
-                            Olá, <?php echo($_SESSION['login_usuario']); ?>
-                        </button>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">ADMIN</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="produtos_lista.php">PRODUTOS</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="tipos_lista.php">TIPOS</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="usuarios_lista.php">USUÁRIOS</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.php">
-                            <span class="glyphicon glyphicon-home"></span>
-                        </a>
-                    </li>
-
-                    <button type="submit" class="me-2 btn btn-secondary">
-                        <a href="../index.php"><i class="bi bi-house-fill text-white"></i></a>
-                    </button>
-
-                     <button type="submit" class="me-2 btn btn-secondary">
-                        <a href="../admin/logout.php"><i class="bi bi-door-open-fill text-white"></i></a>
-                    </button> 
-
-                </ul>
-
-            </div>
-
-        </div>
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="../imagens/logochurrascopequeno.png" alt="" width="120"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">ADMIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">PRODUTOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">TIPOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">USUÁRIOS</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-danger me-2" type="submit"><i class="bi bi-house-fill"></i></button>
+        <button class="btn btn-outline-success" type="submit"><i class="bi bi-door-open-fill"></i></button>
+      </form>
     </div>
-
+  </div>
 </nav>   
 <!-- Link arquivos Bootstrap js         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
