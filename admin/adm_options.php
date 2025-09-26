@@ -12,108 +12,70 @@
 </head>
 <body class="fundofixo">
 <main class="container">
-    <h1 class="card text-bg-danger ps-2">Área Administrativa</h1>
+    <h4 class="card text-bg-danger text-center p-2 mt-2 mb-5">Área Administrativa</h4>
     <div class="row"> <!-- manter os elementos na linha -->
 
-        <!-- ADM PRODUTOS -->
-        <div class="col-sm-6 col-md-4">
-            <div class="card alert-danger">
-                <img src="../imagens/icone_produtos.png" alt="Ícone Produtos" class="img img-fluid mx-auto d-block mt-3 h-100 w-51">
-                <br>
-                <div class="alert-danger">
-                    <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
-                        <div class="btn-group ps-2">
-                            <button class="btn btn-default disabled mb-2" style="cursor: default;">
-                                PRODUTOS
-                            </button>
-                        </div> <!-- fecha btn-group -->
-                    </div> <!-- fecha btn-group PRINCIPAL -->
+                <!-- ADM PRODUTOS -->
+        <div class="col-sm-6 col-md-4 mb-4">
+        <div class="card h-100 shadow border-0">
+            <img src="../imagens/icone_produtos.png" alt="Ícone Produtos" class="card-img-top p-4 img-fluid" style="max-height: 150px; object-fit: contain;">
 
-                    <div class="btn-group btn-group-justified" role="group"><!-- GRUPO DE BOTÕES -->
-                        <div class="btn-group ps-3"> <!-- botão Listar -->
-                            <a href="produtos_lista.php">
-                                <button class="btn btn-danger mb-2">Listar</button>
-                            </a>
-                        </div> <!-- fecha btn-group botão Listar-->
-                        <div class="btn-group ps-2"> <!-- botão Inserir -->
-                            <a href="produtos_insere.php">
-                                <button class="btn btn-danger mb-2">Inserir</button>
-                            </a>
-                        </div> <!-- fecha btn-group botão Inserir-->
-                    </div> <!-- fecha btn-group GRUPO DE BOTÕES -->
-                </div> <!-- fecha alert-danger -->
-            </div> <!-- fecha thumbnail -->
-        </div> <!-- fecha dimensionamento -->
+            <div class="card-body text-center">
+            <h5 class="card-title text-danger fw-bold">PRODUTOS</h5>
+
+            <br>
+            <br>
+
+            <div class="d-grid gap-2 mt-4">
+                <a href="produtos_lista.php" class="btn btn-outline-danger">Listar</a>
+                <a href="produtos_insere.php" class="btn btn-danger">Inserir</a>
+            </div>
+            </div>
+        </div>
+        </div>
+
         <!-- FECHA ADM PRODUTOS -->
 
-
-
         <!-- ADM TIPOS -->
-        <div class="col-sm-6 col-md-4">
-            <div class="card alert-warning">
-                <img src="../imagens/icone_tipos.png" alt="" class="img img-fluid mx-auto d-block mt-3">
-                <br>
-                <div class="alert-warning">
-                    <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
-                        <div class="btn-group ps-2">
-                            <button class="btn btn-default disabled mb-2" style="cursor: default;">
-                                TIPOS
-                            </button>
-                        </div> <!-- fecha btn-group -->
-                    </div> <!-- fecha btn-group PRINCIPAL -->
+        <div class="col-sm-6 col-md-4 mb-4">
+        <div class="card h-100 shadow border-0">
+            <img src="../imagens/icone_tipos.png" alt="Ícone Tipos" class="card-img-top p-4 img-fluid" style="max-height: 150px; object-fit: contain;">
 
-                    <div class="btn-group btn-group-justified" role="group"><!-- GRUPO DE BOTÕES -->
-                        <div class="btn-group ps-3"> <!-- botão Listar -->
-                            <a href="tipos_lista.php">
-                                <button class="btn btn-warning mb-2">Listar</button>
-                            </a>
-                        </div> <!-- fecha btn-group botão Listar-->
-                        <div class="btn-group ps-2"> <!-- botão Inserir -->
-                            <a href="tipos_insere.php">
-                                <button class="btn btn-warning mb-2">Inserir</button>
-                            </a>
-                        </div> <!-- fecha btn-group botão Inserir-->
-                    </div> <!-- fecha btn-group GRUPO DE BOTÕES -->
-                </div> <!-- fecha alert-danger -->
-            </div> <!-- fecha thumbnail -->
-        </div> <!-- fecha dimensionamento -->
+            <div class="card-body text-center">
+            <h5 class="card-title text-warning fw-bold">TIPOS</h5>
+
+            <br>
+            <br>
+
+            <div class="d-grid gap-2 mt-4">
+                <a href="tipos_lista.php" class="btn btn-outline-warning">Listar</a>
+                <a href="tipos_insere.php" class="btn btn-warning">Inserir</a>
+            </div>
+            </div>
+        </div>
+        </div>
         <!-- FECHA ADM TIPOS -->
-
-
         
-        <!-- Duplique o código e faça os ajustes para criar a área de Usuários -->
         <!-- ADM USUÁRIOS -->
-        <div class="col-sm-6 col-md-4">
-            <div class="card alert-info">
-                <img src="../imagens/icone_user.png" alt="" class="img img-fluid mx-auto d-block mt-3">
-                <br>
-                <div class="alert-info">
-                    <div class="btn-group btn-group-justified" role="group"><!-- PRINCIPAL -->
-                        <div class="btn-group ps-2">
-                            <button class="btn btn-default disabled mb-2" style="cursor: default;">
-                                USUÁRIOS
-                            </button>
-                        </div> <!-- fecha btn-group -->
-                    </div> <!-- fecha btn-group PRINCIPAL -->
+        <div class="col-sm-6 col-md-4 mb-4">
+        <div class="card h-100 shadow border-0">
+            <img src="../imagens/icone_user.png" alt="Ícone Usuários" class="card-img-top p-4 img-fluid" style="max-height: 150px; object-fit: contain;">
 
-                    <div class="btn-group btn-group-justified" role="group"><!-- GRUPO DE BOTÕES -->
-                        <div class="btn-group ps-3"> <!-- botão Listar -->
-                            <a href="usuarios_lista.php">
-                                <button class="btn btn-info mb-2">Listar</button>
-                            </a>
-                        </div> <!-- fecha btn-group botão Listar-->
-                        <div class="btn-group ps-2"> <!-- botão Inserir -->
-                            <a href="usuarios_insere.php">
-                                <button class="btn btn-info mb-2">Inserir</button>
-                            </a>
-                        </div> <!-- fecha btn-group botão Inserir-->
-                    </div> <!-- fecha btn-group GRUPO DE BOTÕES -->
-                </div> <!-- fecha alert-danger -->
-            </div> <!-- fecha thumbnail -->
-        </div> <!-- fecha dimensionamento -->
+            <div class="card-body text-center">
+            <h5 class="card-title text-info fw-bold">USUÁRIOS</h5>
+
+            <br>
+            <br>
+
+            <div class="d-grid gap-2 mt-4">
+                <a href="usuarios_lista.php" class="btn btn-outline-info">Listar</a>
+                <a href="usuarios_insere.php" class="btn btn-info">Inserir</a>
+            </div>
+            </div>
+        </div>
+        </div>
         <!-- FECHA ADM USUÁRIOS -->
 
-    </div> <!-- fecha row -->
 </main>
 
     
