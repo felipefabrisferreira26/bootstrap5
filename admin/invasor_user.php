@@ -17,14 +17,13 @@
     <section>
         <article>
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <h1 class="breadcrumb text-danger text-center">Atenção</h1>
-                    <div class="thumbnail text-center">
-                        <span class="fa-7x fa-stack">
+                <div class="col-xs-10 col-sm-12 col-md-6 col-lg-4 offset-lg-4 mt-4 mb-4 p-3 border border-danger rounded-3 bg-dark">
+                    <h4 class="text-white card text-center bg-danger rounded-3 p-2">Atenção</h4>
+                    <div class="card text-center">
+                        <span class="fa-7x fa-stack ms-auto me-auto mt-4">
                             <i class="fas fa-user-secret fa-stack-1x"></i>
                             <i class="fas fa-ban text-danger fa-stack-2x"></i>
                         </span>
-                        <br>
                         <br>
                         <div class="alert alert-danger" role="alert">
                             <h4>
@@ -37,14 +36,12 @@
                             </h4>
                             <p class="text-danger">
                                 <a href="index.php" class="btn btn-danger">
-                                    <i class="fas fa-external-link-alt fa-3x fa-rotate-270"></i>
-                                    <br>
+                                    <i class="fas fa-external-link-alt fa-3x fa-rotate-270 p-2"></i>
                                     <br>
                                     Voltar <br> Área Admin
                                 </a>
                                 <a href="../index.php" class="btn btn-success">
-                                    <i class="fas fa-home fa-3x"></i>
-                                    <br>
+                                    <i class="fas fa-home fa-3x p-2"></i>
                                     <br>
                                     Voltar <br> Área Pública
                                 </a>
