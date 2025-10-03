@@ -28,9 +28,6 @@ $totalRows      =   ($lista)->num_rows;
     <!-- Link para CSS específico 
     <link rel="stylesheet" href="css/meu_estilo.css">-->
 </head>
-
-
-
 <body class="fundofixo container">
 <?php include("menu_publico.php"); ?>
 <h2 class="breadcrumb alert-danger">
