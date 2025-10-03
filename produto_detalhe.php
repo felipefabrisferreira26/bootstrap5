@@ -29,6 +29,7 @@ $totalRows      =   ($lista)->num_rows;
     <link rel="stylesheet" href="css/meu_estilo.css">-->
 </head>
 <body class="fundofixo container">
+<?php include("menu_publico.php"); ?>
 <h2 class="breadcrumb alert-danger">
     <a href="javascript:window.history.go(-1)" class="btn btn-danger">
         <span class="glyphicon glyphicon-chevron-left"></span>
