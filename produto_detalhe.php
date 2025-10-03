@@ -32,6 +32,7 @@ $totalRows      =   ($lista)->num_rows;
 
 
 <body class="fundofixo container">
+<?php include("menu_publico.php"); ?>
 <h2 class="breadcrumb alert-danger">
     <a href="javascript:window.history.go(-1)" class="btn btn-danger">
         <span class="glyphicon glyphicon-chevron-left"></span>
