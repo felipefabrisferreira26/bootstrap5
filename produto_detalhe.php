@@ -50,11 +50,11 @@ $totalRows = $lista->num_rows;
 
     <?php if($totalRows > 0): ?>
         <?php while($row = $lista->fetch_assoc()): ?>
-            <h2 class="breadcrumb bg-danger text-white d-flex align-items-center justify-content-between">
-                <a href="javascript:window.history.back()" class="btn btn-light btn-sm">
+            
+            <h2 class="breadcrumb text-white align-items-center ">
+                <a href="javascript:window.history.back()" class="btn btn-danger mt-3 btn-sm">
                     <i class="bi bi-chevron-left"></i> Voltar
                 </a>
-                <strong><?php echo $row['descri_produto']; ?></strong>
             </h2>
 
             <div class="row justify-content-center">
