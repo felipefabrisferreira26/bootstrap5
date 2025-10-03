@@ -28,6 +28,9 @@ $totalRows      =   ($lista)->num_rows;
     <!-- Link para CSS específico 
     <link rel="stylesheet" href="css/meu_estilo.css">-->
 </head>
+
+
+
 <body class="fundofixo container">
 <h2 class="breadcrumb alert-danger">
     <a href="javascript:window.history.go(-1)" class="btn btn-danger">
